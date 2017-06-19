@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AwesomeApp</string>
+    <string name="tv_title_highlighted_events">Highlighted Events</string>
+    <string name="tv_title_posts">Posts</string>
+</resources>
