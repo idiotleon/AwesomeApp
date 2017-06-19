@@ -42,6 +42,10 @@ public class RVAHighlightedEventsJ extends BaseAdapter {
         return highlightEvents.get(position).getId();
     }
 
+    public String getItemUUID(int position){
+        return getItem(position).getUUID();
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
