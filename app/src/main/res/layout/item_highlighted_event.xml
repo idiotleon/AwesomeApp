@@ -15,7 +15,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/icon_hlevent"
+                android:id="@+id/iv_hle_icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -31,14 +31,14 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/org_name"
+                    android:id="@+id/tv_hle_org_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="TNC China" />
 
                 <TextView
-                    android:id="@+id/count_down"
+                    android:id="@+id/tv_hle_count_down"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/abstract_hlevent"
+        android:id="@+id/tv_hle_abstract"
         style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
         android:padding="15dp">
 
         <ImageView
-            android:id="@+id/iv_hlevents"
+            android:id="@+id/iv_hle_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@mipmap/lake_sammamish" />
@@ -75,7 +75,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_title_hlevent"
+                android:id="@+id/tv_hle_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
@@ -84,6 +84,7 @@
                 android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/tv_hle_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
@@ -92,6 +93,7 @@
                 android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/tv_hle_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="1"
@@ -108,25 +110,28 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_hle_accept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
-            android:text="Accept" />
+            android:text="@string/text_accept" />
 
         <Button
+            android:id="@+id/btn_hle_maybe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
-            android:text="NotSure" />
+            android:text="@strings/text_maybe" />
 
         <Button
+            android:id="@+id/btn_hle_decline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="5dp"
-            android:text="Cancel" />
+            android:text="@strings/text_decline" />
 
     </LinearLayout>
 
