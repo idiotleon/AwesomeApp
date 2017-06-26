@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/title_display_hles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tv_title_highlighted_events" />
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_highlighted_events"
+            android:id="@+id/rv_display_hles"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </HorizontalScrollView>

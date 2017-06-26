@@ -1,22 +1,102 @@
 package com.seawalker.awesomeapp.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.UUID;
+import java.util.ArrayList;
 
 /**
  * Created by LeonthePro7 on 6/18/2017.
  */
 
-public class ModelItemHighlightedEvent {
-    private static final String LOG_TAG = ModelItemHighlightedEvent.class.getSimpleName();
+public class ModelItemHighlightedEventJ implements Parcelable {
+    private static final String LOG_TAG = ModelItemHighlightedEventJ.class.getSimpleName();
+
+    protected ModelItemHighlightedEventJ(Parcel in) {
+        id = in.readLong();
+        UUID = in.readString();
+        title = in.readString();
+        startingTimeStamp = in.readLong();
+        endingTimeStamp = in.readLong();
+        abstractContent = in.readString();
+        description = in.readString();
+        address = in.readString();
+        orgName = in.readString();
+        iconImageURL = in.readString();
+        backgroundImageURL = in.readString();
+    }
+
+    public static final Creator<ModelItemHighlightedEventJ> CREATOR = new Creator<ModelItemHighlightedEventJ>() {
+        @Override
+        public ModelItemHighlightedEventJ createFromParcel(Parcel in) {
+            return new ModelItemHighlightedEventJ(in);
+        }
+
+        @Override
+        public ModelItemHighlightedEventJ[] newArray(int size) {
+            return new ModelItemHighlightedEventJ[size];
+        }
+    };
+
+    public static final ArrayList<ModelItemHighlightedEventJ> dummyHLEsCreator() {
+        Log.v(LOG_TAG, "dummyHELsCreator() executed");
+
+        ArrayList<ModelItemHighlightedEventJ> dummyHLEs = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            String title = "Title" + i;
+            long startingTimeStamp = System.currentTimeMillis();
+            long endingTimeStamp = System.currentTimeMillis();
+            String abstractContent = "abstractContent" + i;
+            String description = "description" + i;
+            String address = "address" + i;
+            String orgName = "orgName" + i;
+            String iconImageUrl = "";
+            String backgroundImageUrl = "";
+
+            ModelItemHighlightedEventJ dummyHLE = new ModelItemHighlightedEventJ(title,
+                    startingTimeStamp,
+                    endingTimeStamp,
+                    AttendingStatus.MAYBE,
+                    abstractContent,
+                    description,
+                    address,
+                    orgName,
+                    iconImageUrl,
+                    backgroundImageUrl);
+            dummyHLEs.add(dummyHLE);
+        }
+
+        return dummyHLEs;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(UUID);
+        dest.writeString(title);
+        dest.writeLong(startingTimeStamp);
+        dest.writeLong(endingTimeStamp);
+        dest.writeString(abstractContent);
+        dest.writeString(description);
+        dest.writeString(address);
+        dest.writeString(orgName);
+        dest.writeString(iconImageURL);
+        dest.writeString(backgroundImageURL);
+    }
 
     enum AttendingStatus {
         ACCEPTED(1),
-        NOT_SURE(2),
+        MAYBE(2),
         DECLINED(0);
 
         private int attendingStatusCode;
@@ -25,12 +105,12 @@ public class ModelItemHighlightedEvent {
             attendingStatusCode = statusCode;
         }
 
-        int getAttendingStatusCode(){
+        int getAttendingStatusCode() {
             return attendingStatusCode;
         }
 
-        void setAttendingStatusCode(int attendingStatusCode){
-            switch (attendingStatusCode){
+        void setAttendingStatusCode(int attendingStatusCode) {
+            switch (attendingStatusCode) {
                 case 0:
                 case 1:
                 case 2:
@@ -57,16 +137,16 @@ public class ModelItemHighlightedEvent {
     private String iconImageURL;
     private String backgroundImageURL;
 
-    public ModelItemHighlightedEvent(String title,
-                                     long startingTimeStamp,
-                                     long endingTimeStamp,
-                                     AttendingStatus attendingStatus,
-                                     String abstractContent,
-                                     String description,
-                                     String address,
-                                     String orgName,
-                                     String iconImageURL,
-                                     String backgroundImageURL) {
+    public ModelItemHighlightedEventJ(String title,
+                                      long startingTimeStamp,
+                                      long endingTimeStamp,
+                                      AttendingStatus attendingStatus,
+                                      String abstractContent,
+                                      String description,
+                                      String address,
+                                      String orgName,
+                                      String iconImageURL,
+                                      String backgroundImageURL) {
         this.UUID = java.util.UUID.randomUUID().toString();
         this.title = title;
         this.startingTimeStamp = startingTimeStamp;
@@ -90,7 +170,7 @@ public class ModelItemHighlightedEvent {
 
     @Override
     public String toString() {
-        return "ModelItemHighlightedEvent{" +
+        return "ModelItemHighlightedEventJ{" +
                 "id=" + id +
                 ", UUID='" + UUID + '\'' +
                 ", title='" + title + '\'' +
@@ -105,7 +185,7 @@ public class ModelItemHighlightedEvent {
                 '}';
     }
 
-    public String getCountDown(){
+    public String getCountDown() {
         return "countDown";
     }
 
@@ -123,7 +203,7 @@ public class ModelItemHighlightedEvent {
         json.put("hle_backgroundImageURL", backgroundImageURL);
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 

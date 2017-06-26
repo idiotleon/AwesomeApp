@@ -8,18 +8,45 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <fragment
-            android:id="@+id/fragment_display_highlighted_events"
-            android:name="com.seawalker.awesomeapp.fragments.DisplayHighlightEventsFragment"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:orientation="vertical"
+                android:padding="@dimen/regular_padding">
+
+                <TextView
+                    android:id="@+id/tv_day_of_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/regular_padding" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_display_highlighted_events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <fragment
-            android:id="@+id/fragment_display_posts"
-            android:name="com.seawalker.awesomeapp.fragments.DisplayPostsFragment"
+        <FrameLayout
+            android:id="@+id/fl_display_posts"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content" />
     </LinearLayout>
-
 </ScrollView>
