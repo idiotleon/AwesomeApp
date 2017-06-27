@@ -10,4 +10,8 @@
     <string name="refresh">Refresh</string>
 
     <string name="vertical_ellipsis">&#8942;</string>
+    <string name="bnv_home">BNV Home</string>
+    <string name="bnv_group">BNV Group</string>
+    <string name="bnv_stats">BNV Stats</string>
+    <string name="bnv_me">BNV Me</string>
 </resources>

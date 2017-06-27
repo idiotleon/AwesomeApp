@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bnv_home"
+        android:checked="true"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/bnv_home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bnv_group"
+        android:checked="true"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/bnv_group"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bnv_stats"
+        android:checked="true"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/bnv_stats"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/bnv_me"
+        android:checked="true"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/bnv_me"
+        app:showAsAction="always" />
+
+</menu>
